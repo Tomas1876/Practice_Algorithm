@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 음양 더하기
+            https://programmers.co.kr/learn/courses/30/lessons/76501
+        */
+        var absolutes = [4,7,12]
+        var signs = [true,false,true]
+        console.log(solution(absolutes, signs))
+
+        function solution(absolutes, signs) {
+            var answer = 0;
+            for(let i = 0; i < absolutes.length; i++){
+                signs[i] === true ? answer += absolutes[i] : answer -= absolutes[i];
+            }
+
+            return answer;
+        }
+    </script>
+</body>
+</html>
