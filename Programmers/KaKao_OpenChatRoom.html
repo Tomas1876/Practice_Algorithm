@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 카카오 2019 오픈채팅방
+           https://programmers.co.kr/learn/courses/30/lessons/42888
+        */
+
+        const array = ["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]
+        function solution(record) {
+            var answer = [];
+            var arr = [];
+            var map = new Map();
+            for(let i = 0; i < record.length; i++){
+                arr.push(record[i].split(" "));
+                map.set(arr[i][1], arr[i][2]);
+            }   
+
+            for(let i = 0; i < arr.length; i++){
+
+                if(arr[i][0] === 'Change' || arr[i][0] === 'Enter'){
+                    map.set(arr[i][1], arr[i][2])
+                } 
+            }
+
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i][0] === 'Enter'){
+                    answer.push(map.get(arr[i][1])+"님이 들어왔습니다.");
+                } else if(arr[i][0] === 'Leave'){
+                    answer.push(map.get(arr[i][1])+"님이 나갔습니다.");
+                }
+
+            }
+
+            return answer;
+        }
+
+        console.log("답",solution(array));
+
+    </script>
+</body>
+</html>
