@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 위클리 8월 1주차 문제
+            https://programmers.co.kr/learn/courses/30/lessons/82612
+            부족한 금액 계산하기
+        */
+        console.log("답 " +solution(3,20,4))
+        function solution(price, money, count) {
+            var sum = Array(count).fill(price).map((v,i)=> v*(i+1)).reduce((sum, currValue)=>sum + currValue)
+            return money >= sum ? 0 : sum - money;
+        }
+
+        //reduce 함수는 처음 써봤는데 아주 유용한 것 같다
+        //가우스 공식을 이용해 푼 사람도 있었음 가우스 공식 공부하기
+    </script>
+</body>
+</html>
