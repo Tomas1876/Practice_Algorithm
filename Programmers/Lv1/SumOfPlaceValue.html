@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 자릿수 더하기
+            https://programmers.co.kr/learn/courses/30/lessons/12931
+        */
+        solution = (n) => ( String(n).split("").map((v)=> Number(v)).reduce((e,current) => e+current))
+        console.log(solution(123))
+    </script>
+</body>
+</html>

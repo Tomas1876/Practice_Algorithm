@@ -8,14 +8,17 @@
 </head>
 <body>
     <script>
-
+        /*
+            프로그래머스 행렬의 덧셈
+            https://programmers.co.kr/learn/courses/30/lessons/12950
+        */
         var a = [[1,2],[2,3]]
         var a2 = [[3,4],[5,6]]
         
         function solution(arr1, arr2) {
             var answer = [];
                 for(let i = 0 ; i < arr1.length; i++){                
-                    answer[i] = new Array();
+                    answer[i] =[];
                         for(let j =0; j<arr1[i].length; j++){                           
                             answer[i].push(Number(arr1[i][j]) + Number(arr2[i][j]))
                         }                     

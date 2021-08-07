@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 문자열 다루기 기본
+            https://programmers.co.kr/learn/courses/30/lessons/12918
+        */
+        function solution(s) {
+            var answer = true;
+            if(s.length == 4 | s.length == 6){
+
+                if(s.includes(0)){
+                    var number = 0;
+                    for(let i =0; i < s.length; i++){
+                        if(s[i] == 0){
+                            number++;
+                        } else{
+                            break;
+                        }
+                    }
+                    answer = s.slice(number) == parseInt(s) ? true:false
+                } else{
+                    answer = parseInt(s) == s ? true : false
+                }    
+                console.log(s/1)
+            } else{
+                answer = false;
+            }
+            return answer;
+        }
+        console.log(solution("1e22"))
+    </script>
+</body>
+</html>
