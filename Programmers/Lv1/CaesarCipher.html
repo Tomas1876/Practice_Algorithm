@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 시저 암호 자바스크립트로 다시 풀기
+            https://programmers.co.kr/learn/courses/30/lessons/12926?language=javascript
+        */
+        console.log(solution("z", 1))
+        function solution(s, n) {
+            var cap = Array(26).fill().map((v, i) => String.fromCharCode(i + 65))
+            var low = Array(26).fill().map((v, i) => String.fromCharCode(i + 65).toLowerCase())
+            var arr = s.split("");
+            var answer = '';
+            
+            for(let i = 0; i < arr.length; i++){
+                for(let j =0; j < cap.length; j++){
+                    if(arr[i]===cap[j]){
+                        n+j >= cap.length ? answer+=cap[j+n - cap.length] : answer+=cap[j+n]
+                    } else if(arr[i]===low[j]){
+                        n+j >= low.length ? answer+=low[j+n - low.length] : answer+=low[j+n]
+                    }
+                }
+                arr[i] === " " ? answer += " " : answer += "";       
+            }        
+            return answer;
+        }
+    </script>
+</body>
+</html>

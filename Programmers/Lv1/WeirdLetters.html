@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 이상한 문자 만들기
+            https://programmers.co.kr/learn/courses/30/lessons/12930
+        */
+        console.log(solution("try hello world"))
+        function solution(s) {
+            var arr = s.split(" ").map((v,i)=>(v.split("")));
+            return arr.map( (v,i)=>( v.map((w,j)=>
+                            ( j%2 ===0 ? w.toUpperCase() : w.toLowerCase() )).join('') + " "))
+                            .join('').slice(0,-1)
+        }
+    </script>
+</body>
+</html>
