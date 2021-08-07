@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 핸드폰 번호 가리기
+            https://programmers.co.kr/learn/courses/30/lessons/12948
+        */
+        console.log(solution("01033334444"))
+        function solution(phone_number) {
+            return phone_number.split("").map((v,i)=> phone_number.length - i > 4 ? "*" : v).join('')
+        }
+    </script>
+</body>
+</html>

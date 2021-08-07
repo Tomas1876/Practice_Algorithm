@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 최대 공약수와 최소 공배수
+            https://programmers.co.kr/learn/courses/30/lessons/12940
+
+            최대 공약수 구하기 - 유클리드 호제법 참고 
+            https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C_%ED%98%B8%EC%A0%9C%EB%B2%95
+
+            a와 b의 최소 공배수 = a*b/최대공약수
+        */
+       //공약수 구하기 함수
+       function getCommonFactor(n,m){
+            var r = m % n;
+            if(r != 0) {
+                return getCommonFactor(r,n)
+            } else{
+                console.log(n)
+                return n;
+            }  
+        }
+        function solution(n, m) {
+            var answer = [];
+            var factor;
+            if(m > n){
+                factor = getCommonFactor(n,m);
+                answer.push(factor, m*n/factor)
+            } else if(n > m){
+                factor = getCommonFactor(m,n);
+                answer.push(factor, m*n/factor)
+            }else {
+                answer.push(n,m)
+            }
+            return answer;
+        }
+        console.log(solution(1071,1029))
+        console.log(solution(4,22))
+    </script>
+</body>
+</html>

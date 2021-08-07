@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 정수 내림차순
+            https://programmers.co.kr/learn/courses/30/lessons/12933
+        */
+        function solution(n) {
+            return Number(String(n).split("").sort().reverse().join(""));
+        }
+        console.log(solution(118372))
+    </script>
+</body>
+</html>
