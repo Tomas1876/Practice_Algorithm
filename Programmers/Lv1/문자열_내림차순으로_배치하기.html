@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+           프로그래머스 문자열 내림차순으로 배치하기
+           https://programmers.co.kr/learn/courses/30/lessons/12917 
+        */
+
+        function solution(s) {
+            var arr = s.split("");
+            var answer = '';
+
+            if(s.length == 1){
+                answer = s;
+            } else {
+                answer = arr.sort(function(a, b) {
+                    if(a < b) return 1;
+                    if(a > b) return -1;
+                    if(a === b) return 0;
+                }).join('')
+            }
+            return answer;
+        }
+        console.log(solution("Zbcdefg"))
+    </script>
+</body>
+</html>

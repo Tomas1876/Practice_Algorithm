@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 두 개 뽑아서 더하기
+            https://programmers.co.kr/learn/courses/30/lessons/68644
+        */
+
+        function solution(numbers) {
+            var answer = [];
+
+            for(let i = 0; i < numbers.length; i++){
+                for(let j = numbers.length-1; j > i; j--){
+                    answer.push(numbers[i] + numbers[j])
+                }
+            }
+
+            //sort함수는 마법처럼 자동으로 오름차순 정렬해주지 않는 다는 걸 명심하기
+            return answer = [...new Set(answer)].sort((a, b)=>( a - b));
+        }
+        var n = [5,0,2,7]
+        console.log(solution(n))
+    </script>
+</body>
+</html>

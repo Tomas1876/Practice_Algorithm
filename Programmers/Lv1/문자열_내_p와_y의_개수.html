@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 문자열 내 p와 y의 개수
+            https://programmers.co.kr/learn/courses/30/lessons/12916
+        */
+        function solution(s){
+            var answer = true;
+            
+            var p = s.split("").filter((v) => v=="p" || v == "P")
+            var y = s.split("").filter((v) => v=="y" || v == "Y")
+            
+            if(p.length != y.length){
+                answer = false;
+            }
+            
+            return answer;
+        }
+        console.log(solution("pPoooyY"))
+    </script>
+</body>
+</html>

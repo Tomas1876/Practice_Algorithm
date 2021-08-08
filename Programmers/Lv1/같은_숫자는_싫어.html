@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 같은 숫자는 싫어
+            https://programmers.co.kr/learn/courses/30/lessons/12906
+        */
+
+        solution = (arr) =>{
+            var answer = [];
+            if(arr.length > 0){
+                for(let i = 0; i < arr.length-1; i++){               
+                    if(arr[i] != arr[i+1]){         
+                        answer.push(arr[i])
+                    }
+                }
+                var top = arr[arr.length-1];
+                if(top != answer[answer.length-1]){
+                    answer.push(top)
+                }
+            }
+  
+            return answer
+        }
+        let a = [1,1,3,3,0,1,1]
+        console.log(solution(a))
+    </script>
+</body>
+</html>
