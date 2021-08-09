@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 나누어 떨어지는 숫자 배열
+            https://programmers.co.kr/learn/courses/30/lessons/12910
+        */
+        function solution(arr, divisor) {
+            var answer = arr.filter((v)=> v % divisor == 0 )
+            return answer.length === 0 ? [-1] : answer.sort((a,b)=>a-b);
+        }
+        console.log(solution([5,9,7,10],5))
+
+    </script>
+</body>
+</html>

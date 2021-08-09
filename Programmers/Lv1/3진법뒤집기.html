@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            프로그래머스 3진법 뒤집기
+            https://programmers.co.kr/learn/courses/30/lessons/68935
+        */
+       function solution(n){
+            return parseInt((String(n.toString(3)).split("").reverse()).join(""),3)
+       }     
+       console.log(solution(45))
+    </script>
+</body>
+</html>

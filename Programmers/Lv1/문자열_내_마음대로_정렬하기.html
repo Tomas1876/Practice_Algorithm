@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+           프로그래머스 문자열 내 마음대로 정렬하기
+           https://programmers.co.kr/learn/courses/30/lessons/12915
+        */
+        function sorting(s1, s2){
+            var temp;
+            temp = s1;
+            s1 = s2;            
+            s2 = temp;
+            return [s1,s2]
+
+        }
+        function solution(String, n) {
+            
+            for(let j = String.length-1; j > -1; j--){
+                for(let i =0; i < String.length-1; i ++){
+                    if(String[i][n] > String[i+1][n]){
+                    var arr = sorting(String[i], String[i+1])
+                        String[i] = arr[0]
+                        String[i+1] = arr[1]
+
+                    } else if(String[i][n] == String[i+1][n]){
+
+                        if(String[i] > String[i+1]){         
+                            var arr = sorting(String[i], String[i+1])  
+                            String[i] = arr[0]
+                            String[i+1] = arr[1]            
+                        } else{ 
+                            var arr = sorting(String[i], String[i+1])
+                            String[i] = arr[1]
+                            String[i+1] = arr[0]                     
+                        }
+                    } else {
+                        var arr = sorting(String[i], String[i+1])
+                        String[i] = arr[1]
+                        String[i+1] = arr[0]
+                    }
+                }            
+                
+            }
+            
+            return String;
+        }
+        console.log(solution(["sun", "bed", "car"], 1))
+    </script>
+</body>
+</html>
