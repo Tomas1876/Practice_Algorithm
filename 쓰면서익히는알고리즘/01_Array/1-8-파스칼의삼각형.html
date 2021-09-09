@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function pascal(n) {  //파스칼의 삼각형 출력하는 메소드
+            let arr = [];
+            if (n == 1) {  //맨 첫줄
+                arr[0] = 1;
+                console.log(arr)
+                return arr;
+            } else if (n == 2) { // 두번째 줄
+                arr[0] = 1;
+                arr[1] = 1;
+                pascal(n - 1);
+            } else { // 그 외 나머지 줄의 값
+                arr[0] = 1;
+                arr[n - 1] = 1;
+                let temp = [];
+                temp = pascal(n - 1); // 재귀
+                for (let i = 1; i < n - 1; i++) {
+                    arr[i] = temp[i - 1] + temp[i];
+                }
+            }
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+            return arr;
+        }
+        console.log(pascal(6));
+    </script>
+</body>
+
+</html>
