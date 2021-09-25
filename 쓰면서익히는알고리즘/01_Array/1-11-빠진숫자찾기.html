@@ -8,11 +8,12 @@
 </head>
 <body>
     <script>
+        const array = [3, 1, 0, 7, 6, 5, 8, 2]
         function solution(arr){
             arr.sort((a,b)=>a-b)
             if(arr[0]!==0){
                 return 0;
-            } else if(arr[arr.length-1] !== arr.length-1){
+            } else if(arr[arr.length-1] !== arr.length){
                 return arr.length-1;
             }
             for(let i =0; i < arr.length; i++){
@@ -21,7 +22,20 @@
                 }
             }
         }
-        console.log(solution([3,1,0,7,6,5,8,2]))
+        console.log(solution(array))
+
+        function solution2(arr) {
+                arr.sort((a,b)=>a-b)
+                let set = new Set([...arr])
+                let answer;
+                set.forEach((v1,v2)=>{
+                    if(v1 !== v2){
+                        answer =  v1
+                    }
+                })
+                return answer
+            }
+            console.log(solution2(array))
     </script>
 </body>
 </html>

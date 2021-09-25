@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회문(Plalindrome) 확인</title>
+</head>
+<body>
+    <script>
+
+        const pal = "Abbc,c,bb,a";
+
+        function solution(p) {
+
+            const regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;            
+            p = p.toLowerCase().trim();
+            if (regExp.test(p)) {
+                p = p.replace(regExp, "");
+            }
+            let arr = p.split("");
+            console.log(arr)
+            let i = 0;
+            let j = arr.length-1;
+           while(i<j){
+                if(arr[i] != arr[j]){
+                    return false
+                }
+                i++;
+                j--;
+           }
+            return true;   
+        }
+        function solution2(p) {
+            const regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+            p = p.toLowerCase().trim();
+            if (regExp.test(p)) {
+                p = p.replace(regExp, "");
+            }
+            const r = p.split("").reverse().join("")
+            return p === r ? true : false
+        }
+
+        console.log(solution(pal))
+        console.log(solution2(pal))
+
+    </script>
+</body>
+</html>
